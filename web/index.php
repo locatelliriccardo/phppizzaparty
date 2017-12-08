@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Ricerca</title>
+		<title>Ricerca $que</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script>
 			function controllo_campi()
@@ -41,6 +41,22 @@
 			{
 				$que="pizzeria";
 			}
+		
+			echo "<form id='forma' method='post' onsubmit='return controllo_campi();'><br/>";
+			echo "<table>";
+			echo "<tr>";
+			echo " <td>Numero elementi (1-50): </td><td><input type='text' value='$lim' name='lim'id='lim' /></td>";
+			echo "</tr>";
+			echo "<tr>";
+			echo " <td>Citta: </td><td><input type='text' value='$cit' name='cit' id='cit' /></td>";
+			echo "</tr>";
+			echo "<tr>";
+			echo " <td>Cosa stai cercando?: </td><td><input type='text' value='$que' name='que' id='que' /></td><br/>";
+			echo "</tr>";
+			echo "</table>";
+			echo " <input type='submit' value='Aggiorna tabella' class='btn'/>";
+			echo "</form>";
+		
 			# Questo script chiama un'API e la inserisce in una tabella 
 			# Indirizzo dell'API da richiedere
 			$indirizzo_pagina="https://api.foursquare.com/v2/venues/search?v=20161016&query=$que&limit=$lim&intent=checkin&client_id=YVMN1NGHAW4DWINOY2BHBVQTGR0RG01D4EVZ3Z3TPRN5EBE2&W&client_secret=GYRAVQCTVV5DUYI3J3OH2GKLQN5S2LEA0QIGECJ1MUFBTX2X&near=$cit";
@@ -78,20 +94,7 @@
 			echo curl_error($ch);
 			curl_close($ch);
 			
-			echo "<form id='forma' method='post' onsubmit='return controllo_campi();'><br/>";
-			echo "<table>";
-			echo "<tr>";
-			echo " <td>Numero elementi (1-50): </td><td><input type='text' value='$lim' name='lim'id='lim' /></td>";
-			echo "</tr>";
-			echo "<tr>";
-			echo " <td>Citta: </td><td><input type='text' value='$cit' name='cit' id='cit' /></td>";
-			echo "</tr>";
-			echo "<tr>";
-			echo " <td>Cosa stai cercando?: </td><td><input type='text' value='$que' name='que' id='que' /></td><br/>";
-			echo "</tr>";
-			echo "</table>";
-			echo " <input type='submit' value='Aggiorna tabella' class='btn'/>";
-			echo "</form>";
+			
 		?>
 	</body>
 </html>
