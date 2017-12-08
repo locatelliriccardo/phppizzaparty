@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Ricerca $que</title>
+		<title>Ricerca</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script>
 			function controllo_campi()
