@@ -3,6 +3,11 @@ body {
 background: #6b6b47;
 font-family: sans-serif;   
 }
+.table-div{
+	width: 800px;
+	padding: 8% 0 0;
+	margin: auto;
+}
 .login-div{
 	width: 460px;
 	padding: 8% 0 0;
