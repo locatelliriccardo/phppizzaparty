@@ -4,7 +4,6 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="shortcut icon" type="image/x-icon" href="images/l.png" />
 	</head>
-	<font size="6">Pagina per la ricerca di un ristorante:</font><br />
 	<body>
 		<?php
 		    //Imposto i campi di ricerca di default
@@ -16,12 +15,10 @@
 				$citta=$_POST["citta"];
 			else
 				$citta="Bergamo";
-			if(isset($_POST["query"]))
-				$query=$_POST["query"];
+			if(isset($_POST["posto"]))
+				$query=$_POST["posto"];
 			else
 				$query="Pizzeria";
-			
-			//Form ddei dati di ricerca
 			echo "<div class='login-div'>";
 			 echo"<div class='login-form'>";
 			  echo "<form id='forma' method='post' onsubmit='return controllo();'>";
@@ -34,8 +31,8 @@
 			  echo "<div class='select_arrow'>";
 			  echo "</div>";
 			  echo "</div>";
-			  echo " Citta: <input type='text' value='$citta' name='citta' id='citta' /><br/>";
-			  echo " Tipologia del locale: <input type='text' value='$query' name='query' id='query' /><br/>";
+			  echo " Città<br/><input type='text' value='$citta' name='citta' id='citta' /><br/>";
+			  echo " Tipologia del locale<br/><input type='text' value='$query' name='query' id='query' /><br/>";
 			  echo " <input type='submit' value='Aggiorna tabella' class='btn'/>";
 			  echo "</form>";
 			 echo "</div>";
