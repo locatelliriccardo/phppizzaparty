@@ -35,12 +35,14 @@
 			
 			//Form ddei dati di ricerca
 			echo "<div class='login-div'>";
-			echo "<form id='forma' method='post' onsubmit='return controllo();'>";
-			echo " Numero elementi (da 1 a massimo 50):<input type='text' value='$limite' name='limite'id='limite' /><br/>";
-			echo " Citta: <input type='text' value='$citta' name='citta' id='citta' /><br/>";
-			echo " Tipologia del locale: <input type='text' value='$query' name='query' id='query' /><br/>";
-			echo " <input type='submit' value='Aggiorna tabella' class='btn'/>";
-			echo "</form>";
+			 echo"<div class='login-form'>";
+			  echo "<form id='forma' method='post' onsubmit='return controllo();'>";
+			  echo " Numero elementi (da 1 a massimo 50):<input type='text' value='$limite' name='limite'id='limite' /><br/>";
+			  echo " Citta: <input type='text' value='$citta' name='citta' id='citta' /><br/>";
+			  echo " Tipologia del locale: <input type='text' value='$query' name='query' id='query' /><br/>";
+			  echo " <input type='submit' value='Aggiorna tabella' class='btn'/>";
+			  echo "</form>";
+			 echo "</div>";
 			echo "</div>";
 			//Salvo il link di richiestain una variabile
 	    
