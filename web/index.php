@@ -52,12 +52,8 @@
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			$json=curl_exec($ch) or die(curl_error());
 			$dati = json_decode($json);
-			echo('<table id="customers" align="center">
-			  <tr>
-				<th>Nome</th>
-				<th>Latitudine</th>
-				<th>Longitudine</th>
-			  </tr>');
+			echo "<div class='login-div'>";
+			echo("<table id='customers'><tr><th>Nome Pizzeria</th><th>Latitudine</th><th>Longitudine</th></tr>";
 			for($i=0; $i<$limite; $i++)
 			{	
 				echo "<tr>";
@@ -73,6 +69,7 @@
 				echo "</tr>";
 			}
 			echo "</table>";
+			echo "</div>";
 			echo curl_error($ch);
 			curl_close($ch);	
 		?>
