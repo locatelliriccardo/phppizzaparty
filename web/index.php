@@ -2,6 +2,7 @@
 	<head>
 		<title>Ricerca ristorante</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="shortcut icon" type="image/x-icon" href="images/l.png" />
 		<script>
 			function controllo()
 			{
