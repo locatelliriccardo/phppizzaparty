@@ -3,18 +3,6 @@
 		<title>Ricerca ristorante</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="shortcut icon" type="image/x-icon" href="images/l.png" />
-		<script>
-			function controllo()
-			{
-				var numero=document.getElementById("limite").value;
-				var ok=false;
-				var verifica=/^\d{1,2}$/
-				if(document.getElementById("limite").value!=""&&document.getElementById("citta").value!=""&&document.getElementById("query").value!="")
-					if(numero.match(verifica)&&parseInt(numero)<51)
-						ok=true;
-				return ok; 
-			}
-		</script>
 	</head>
 	<font size="6">Pagina per la ricerca di un ristorante:</font><br />
 	<body>
@@ -37,10 +25,14 @@
 			echo "<div class='login-div'>";
 			 echo"<div class='login-form'>";
 			  echo "<form id='forma' method='post' onsubmit='return controllo();'>";
-			  echo "<select>";
-			   for($i=1;$i<51;$i++)
-			    echo"<option value=$i>$i</option>";
-			  echo"</select>";
+			  echo "<div class='select'>";
+			   echo "<select>";
+			    for($i=1;$i<51;$i++)
+			     echo"<option value=$i>$i</option>";
+			   echo"</select>";
+			  echo "<div class='select_arrow'>";
+			  echo "</div>";
+			  echo "</div>";
 			  echo " Citta: <input type='text' value='$citta' name='citta' id='citta' /><br/>";
 			  echo " Tipologia del locale: <input type='text' value='$query' name='query' id='query' /><br/>";
 			  echo " <input type='submit' value='Aggiorna tabella' class='btn'/>";
