@@ -1,4 +1,3 @@
-<link rel="shortcut icon" type="image/x-icon" href="images/l.png" />
 <html>
 	<head>
 		<title>Ricerca ristorante</title>
