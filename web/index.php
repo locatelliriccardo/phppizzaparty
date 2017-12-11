@@ -8,8 +8,8 @@
 	<body>
 		<?php
 		    //Imposto i campi di ricerca di default
-			if(isset($_POST["limite"]))
-				$limite=$_POST["limite"];
+			if(isset($_POST["massimo"]))
+				$limite=$_POST["massimo"];
 			else
 				$limite=15;
 			if(isset($_POST["citta"]))
@@ -26,8 +26,8 @@
 			 echo"<div class='login-form'>";
 			  echo "<form id='forma' method='post' onsubmit='return controllo();'>";
 			  echo "<div class='select'>";
-			   echo "<select id='limite name='limite'>";
-			    echo"<option selected disabled>Scegli il numero massimo</option>"
+			   echo "<select id='massimo name='massimo'>";
+			    echo "<option selected disabled>Scegli il numero massimo</option>";
 			    for($i=1;$i<51;$i++)
 			     echo"<option value=$i>$i</option>";
 			   echo"</select>";
