@@ -37,9 +37,9 @@
 			echo "<div class='login-div'>";
 			 echo"<div class='login-form'>";
 			  echo "<form id='forma' method='post' onsubmit='return controllo();'>";
-			  echo "<select>"
+			  echo "<select>";
 			   for($i=1;$i<51;$i++)
-			    echo"<option value=".$i.">".$i."</option>";
+			    echo"<option value=$i>$i</option>";
 			  echo"</select>";
 			  echo " Citta: <input type='text' value='$citta' name='citta' id='citta' /><br/>";
 			  echo " Tipologia del locale: <input type='text' value='$query' name='query' id='query' /><br/>";
