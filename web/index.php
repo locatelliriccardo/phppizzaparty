@@ -26,7 +26,8 @@
 			 echo"<div class='login-form'>";
 			  echo "<form id='forma' method='post' onsubmit='return controllo();'>";
 			  echo "<div class='select'>";
-			   echo "<select>";
+			   echo "<select id='limite name='limite'>";
+			    echo"<option selected disabled>Scegli il numero massimo</option>"
 			    for($i=1;$i<51;$i++)
 			     echo"<option value=$i>$i</option>";
 			   echo"</select>";
@@ -39,8 +40,6 @@
 			  echo "</form>";
 			 echo "</div>";
 			echo "</div>";
-			//Salvo il link di richiestain una variabile
-	    
 			$indirizzo="https://api.foursquare.com/v2/venues/search?v=20161016&query=$query&limit=$limite&intent=checkin&client_id=4DLLUZVXJEQIL0DFCN3B3YFG4EN4W4DMICUVPSNMRD24XKVU&W&client_secret=ZWWMV4LSNXGTZIRIUWHGE5PQDESQ0AHBACUPXVDPTESUTLRX&near=$citta";
 			$ch = curl_init() or die(curl_error());
 			curl_setopt($ch, CURLOPT_URL,$indirizzo);
