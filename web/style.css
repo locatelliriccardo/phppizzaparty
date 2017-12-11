@@ -1,0 +1,58 @@
+<style type="text/css">
+            body {
+                background: #6b6b47;
+                font-family: sans-serif;   
+            }
+       	    .login-div{
+                width: 460px;
+                padding: 8% 0 0;
+                margin: auto;
+        	}
+            .login-form{
+                position: relative;
+                background: #FFFFFF;
+                margin: 0 auto 100px;
+                padding: 45px;
+                text-align: left;
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        	}
+             .login-form p{
+        	margin: 2px;
+                padding: 0;
+             }
+             .login-form input[type="text"], input[type="password"], input[type="submit"],input[type="button"]{
+                font-family: sans-serif;
+                background: #ede9e1;
+                width: 100%;
+                border: 0;
+                margin: 0 0 15px;
+                padding: 15px;
+                box-sizing: border-box;
+                font-size: 14px;        	   
+             }
+             .login-form input[type="submit"]:hover{
+        	opacity: 0.8;
+             }
+             .image-container{
+        	width: 50;
+        	padding: 10px;
+             }
+             .image-container img{
+                display: block;
+                margin-left: auto;
+                margin-right: auto 
+             }
+	     table {
+		border-collapse: collapse;
+		width: 100%;
+	     }
+	     tr:nth-child(even){background-color: #ece8df}
+	     th {
+		background-color: #d9d2bf;
+		color: white;
+	     }
+	     th, td {
+		text-align: left;
+		padding: 8px;
+	     }
+		</style>
