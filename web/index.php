@@ -121,9 +121,15 @@
 				for($i=0; $i<$lim; $i++)
 				{	
 					echo ("<tr>");
-					echo ("<td>".$data->response->venues[$i]->name."</td>");
-					echo ("<td>".$data->response->venues[$i]->location->lat."</td>");
-					echo ("<td>".$data->response->venues[$i]->location->lng."</td>");
+					echo ("<td>");
+					echo $data->response->venues[$i]->name
+					echo ("</td>");
+					echo ("<td>");
+					echo $data->response->venues[$i]->location->lat;
+				 	echo ("</td>");
+					echo ("<td>");
+					echo $data->response->venues[$i]->location->lng;
+					echo ("</td>");
 					echo ("</tr>");
 				}
 			  echo ("</table>");
