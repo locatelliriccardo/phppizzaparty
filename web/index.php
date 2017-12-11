@@ -34,12 +34,14 @@
 				$query="Pizzeria";
 			
 			//Form ddei dati di ricerca
+			echo "<div class='login-div'>";
 			echo "<form id='forma' method='post' onsubmit='return controllo();'>";
 			echo " Numero elementi (da 1 a massimo 50):<input type='text' value='$limite' name='limite'id='limite' /><br/>";
 			echo " Citta: <input type='text' value='$citta' name='citta' id='citta' /><br/>";
 			echo " Tipologia del locale: <input type='text' value='$query' name='query' id='query' /><br/>";
 			echo " <input type='submit' value='Aggiorna tabella' class='btn'/>";
 			echo "</form>";
+			echo "</div>";
 			//Salvo il link di richiestain una variabile
 	    
 			$indirizzo="https://api.foursquare.com/v2/venues/search?v=20161016&query=$query&limit=$limite&intent=checkin&client_id=4DLLUZVXJEQIL0DFCN3B3YFG4EN4W4DMICUVPSNMRD24XKVU&W&client_secret=ZWWMV4LSNXGTZIRIUWHGE5PQDESQ0AHBACUPXVDPTESUTLRX&near=$citta";
