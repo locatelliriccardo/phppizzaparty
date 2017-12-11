@@ -7,7 +7,7 @@
 
 	</head>
 	<body>
-		<? php
+		<?php
 			if(isset($_POST["lim"]))
 			{	$lim=$_POST["lim"];}
 			else
@@ -20,8 +20,7 @@
 			{	$que=$_POST["que"];}
 			else
 			{	$que="pizzeria";}
-			echo ("<div class='login-div'>");
-                         echo ("<div class='login-form'>");
+			
 			  echo ("<form id='forma' method='post' onsubmit='return controllo_campi();'><br/>");
 			     echo("<select>");
     				for ($i=1; $i<=100; $i++)
@@ -32,8 +31,6 @@
 			     echo ("Cosa stai cercando <input type='text' value='$que' name='que' id='que'/>");
 			   echo ("<input type='submit' value='Aggiorna tabella'/>");
 			  echo ("</form>");
-			 echo("</div>");
-			echo("</div><br/><br/><br/>");
 			# Questo script chiama un'API e la inserisce in una tabella 
 			# Indirizzo dell'API da richiedere
 		        $indirizzo_pagina="https://api.foursquare.com/v2/venues/search?v=20161016&query=$que&limit=$lim&intent=checkin&client_id=4DLLUZVXJEQIL0DFCN3B3YFG4EN4W4DMICUVPSNMRD24XKVU&W&client_secret=ZWWMV4LSNXGTZIRIUWHGE5PQDESQ0AHBACUPXVDPTESUTLRX&near=$cit";
