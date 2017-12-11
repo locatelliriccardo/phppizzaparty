@@ -1,71 +1,76 @@
+<link rel="shortcut icon" type="image/x-icon" href="images/l.png" />
 <html>
 	<head>
-		<title>cose</title>
-		<link rel="shortcut icon" type="image/x-icon" href="images/l.png" />
+		<title>Ricerca ristorante</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
-
+		<script>
+			function controllo()
+			{
+				var numero=document.getElementById("limite").value;
+				var ok=false;
+				var verifica=/^\d{1,2}$/
+				if(document.getElementById("limite").value!=""&&document.getElementById("citta").value!=""&&document.getElementById("query").value!="")
+					if(numero.match(verifica)&&parseInt(numero)<51)
+						ok=true;
+				return ok; 
+			}
+		</script>
 	</head>
+	<font size="6">Pagina per la ricerca di un ristorante:</font><br />
 	<body>
 		<?php
-			if(isset($_POST["lim"]))
-			{	$lim=$_POST["lim"];}
+		    //Imposto i campi di ricerca di default
+			if(isset($_POST["limite"]))
+				$limite=$_POST["limite"];
 			else
-			{	$lim=10;}
-			if(isset($_POST["cit"]))
-			{	$cit=$_POST["cit"];}
+				$limite=15;
+			if(isset($_POST["citta"]))
+				$citta=$_POST["citta"];
 			else
-			{	$cit="bergamo";}
-			if(isset($_POST["que"]))
-			{	$que=$_POST["que"];}
+				$citta="Bergamo";
+			if(isset($_POST["query"]))
+				$query=$_POST["query"];
 			else
-			{	$que="pizzeria";}
+				$query="Pizzeria";
 			
-			  echo ("<form id='forma' method='post' onsubmit='return controllo_campi();'><br/>");
-			     echo("<select>");
-    				for ($i=1; $i<=100; $i++)
-            			 echo("<option value=".$i.">".$i."</option>");
-			     echo("</select>");
-			     //echo ("Numero elementi (1-50) <input type='text' value='$lim' name='lim'id='lim'/>");
-			     echo ("Città <input type='text' value='$cit' name='cit' id='cit'/>");
-			     echo ("Cosa stai cercando <input type='text' value='$que' name='que' id='que'/>");
-			   echo ("<input type='submit' value='Aggiorna tabella'/>");
-			  echo ("</form>");
-			# Questo script chiama un'API e la inserisce in una tabella 
-			# Indirizzo dell'API da richiedere
-		        $indirizzo_pagina="https://api.foursquare.com/v2/venues/search?v=20161016&query=$que&limit=$lim&intent=checkin&client_id=4DLLUZVXJEQIL0DFCN3B3YFG4EN4W4DMICUVPSNMRD24XKVU&W&client_secret=ZWWMV4LSNXGTZIRIUWHGE5PQDESQ0AHBACUPXVDPTESUTLRX&near=$cit";
-			# Codice di utilizzo di cURL
-			# Chiama l'API e la immagazzina in $json
+			//Form ddei dati di ricerca
+			echo "<form id='forma' method='post' onsubmit='return controllo();'>";
+			echo " Numero elementi (da 1 a massimo 50):<input type='text' value='$limite' name='limite'id='limite' /><br/>";
+			echo " Citta: <input type='text' value='$citta' name='citta' id='citta' /><br/>";
+			echo " Tipologia del locale: <input type='text' value='$query' name='query' id='query' /><br/>";
+			echo " <input type='submit' value='Aggiorna tabella' class='btn'/>";
+			echo "</form>";
+			//Salvo il link di richiestain una variabile
+	    
+			$indirizzo="https://api.foursquare.com/v2/venues/search?v=20161016&query=$query&limit=$limite&intent=checkin&client_id=4DLLUZVXJEQIL0DFCN3B3YFG4EN4W4DMICUVPSNMRD24XKVU&W&client_secret=ZWWMV4LSNXGTZIRIUWHGE5PQDESQ0AHBACUPXVDPTESUTLRX&near=$citta";
 			$ch = curl_init() or die(curl_error());
-			curl_setopt($ch, CURLOPT_URL,$indirizzo_pagina);
+			curl_setopt($ch, CURLOPT_URL,$indirizzo);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			$json=curl_exec($ch) or die(curl_error());
-			# Decodifico la stringa json e la salvo nella variabile $data
-			$data = json_decode($json);
-			# Stampa della tabella delle pizzerie.
-			  echo ("<table>");
-				echo("<tr>");
-				 echo ("<th>NOME</th>");
-				 echo ("<th>LATITUDINE</th>");
-				 echo ("<th>LONGITUDINE</th>");
-				echo "(</tr>");
-				for($i=0; $i<$lim; $i++)
-				{	
-					echo ("<tr>");
-					echo ("<td>");
-					echo $data->response->venues[$i]->name
-					echo ("</td>");
-					echo ("<td>");
-					echo $data->response->venues[$i]->location->lat;
-				 	echo ("</td>");
-					echo ("<td>");
-					echo $data->response->venues[$i]->location->lng;
-					echo ("</td>");
-					echo ("</tr>");
-				}
-			  echo ("</table>");
-			# Stampa di eventuali errori
+			$dati = json_decode($json);
+			echo('<table id="customers" align="center">
+			  <tr>
+				<th>Nome</th>
+				<th>Latitudine</th>
+				<th>Longitudine</th>
+			  </tr>');
+			for($i=0; $i<$limite; $i++)
+			{	
+				echo "<tr>";
+					echo "<td>";
+					echo $dati->response->venues[$i]->name;
+					echo "</td>";
+					echo "<td>";
+					echo $dati->response->venues[$i]->location->lat;
+					echo "</td>";
+					echo "<td>";
+					echo $dati->response->venues[$i]->location->lng;
+					echo "</td>";
+				echo "</tr>";
+			}
+			echo "</table>";
 			echo curl_error($ch);
-			curl_close($ch);
+			curl_close($ch);	
 		?>
 	</body>
 </html>
