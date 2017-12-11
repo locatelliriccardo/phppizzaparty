@@ -39,11 +39,11 @@ font-family: sans-serif;
 	opacity: 0.8;
 }
 .image-container{
-	width: 50;
 	padding: 10px;
 }
 .image-container img{
 	display: block;
+	width 50%;
 	margin-left: auto;
 	margin-right: auto 
 }
