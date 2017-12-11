@@ -20,11 +20,11 @@
                 text-align: left;
                 box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
         	}
-        	.login-form p{
-        	    margin: 2px;
+             .login-form p{
+        	margin: 2px;
                 padding: 0;
-        	}
-        	.login-form input[type="text"], input[type="password"], input[type="submit"],input[type="button"]{
+             }
+             .login-form input[type="text"], input[type="password"], input[type="submit"],input[type="button"]{
                 font-family: sans-serif;
                 background: #ede9e1;
                 width: 100%;
@@ -33,33 +33,32 @@
                 padding: 15px;
                 box-sizing: border-box;
                 font-size: 14px;        	   
-        	}
-        	.login-form input[type="submit"]:hover{
-        	   opacity: 0.8;
-        	}
-        	
-        	.image-container{
-        	   width: 50;
-        	   padding: 10px;
-        	}
-        	.image-container img{
+             }
+             .login-form input[type="submit"]:hover{
+        	opacity: 0.8;
+             }
+             .image-container{
+        	width: 50;
+        	padding: 10px;
+             }
+             .image-container img{
                 display: block;
                 margin-left: auto;
                 margin-right: auto 
-        	}
-		table {
-		   border-collapse: collapse;
-		   width: 100%;
-		}
-		tr:nth-child(even){background-color: #ece8df}
-		th {
-		   background-color: #d9d2bf;
-		   color: white;
-		}
-		th, td {
-		   text-align: left;
-		   padding: 8px;
-		}
+             }
+	     table {
+		border-collapse: collapse;
+		width: 100%;
+	     }
+	     tr:nth-child(even){background-color: #ece8df}
+	     th {
+		background-color: #d9d2bf;
+		color: white;
+	     }
+	     th, td {
+		text-align: left;
+		padding: 8px;
+	     }
 		</style>
 		<script>
 			function controllo_campi()
@@ -97,7 +96,7 @@
 			   echo ("<input type='submit' value='Aggiorna tabella' />");
 			  echo ("</form>");
 			 echo("</div>");
-			echo("</div>");
+			echo("</div></br></br></br></br></br>");
 			# Questo script chiama un'API e la inserisce in una tabella 
 			# Indirizzo dell'API da richiedere
 		        $indirizzo_pagina="https://api.foursquare.com/v2/venues/search?v=20161016&query=$que&limit=$lim&intent=checkin&client_id=4DLLUZVXJEQIL0DFCN3B3YFG4EN4W4DMICUVPSNMRD24XKVU&W&client_secret=ZWWMV4LSNXGTZIRIUWHGE5PQDESQ0AHBACUPXVDPTESUTLRX&near=$cit";
