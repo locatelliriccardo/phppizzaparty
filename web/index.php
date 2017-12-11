@@ -28,8 +28,8 @@
 			  echo "<div class='select'>";
 			   echo "<select id='massimo name='massimo'>";
 			    echo "<option selected disabled>Scegli il numero massimo</option>";
-			    for($i=1;$i<51;$i++)
-			     echo"<option value=$i>$i</option>";
+			    for($massimo=1;$massimo<51;$massimo++)
+			     echo"<option value=$massimo>$massimo</option>";
 			   echo"</select>";
 			  echo "<div class='select_arrow'>";
 			  echo "</div>";
