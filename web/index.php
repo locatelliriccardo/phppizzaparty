@@ -1,7 +1,53 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Ricerca</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<style type="text/css">
+            body {
+                background: #6b6b47;
+                font-family: sans-serif;   
+            }
+        	.login-div{
+                width: 460px;
+                padding: 8% 0 0;
+                margin: auto;
+        	}
+            .login-form{
+                position: relative;
+                background: #FFFFFF;
+                margin: 0 auto 100px;
+                padding: 45px;
+                text-align: left;
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        	}
+        	.login-form p{
+        	    margin: 2px;
+                padding: 0;
+        	}
+        	.login-form input[type="text"], input[type="password"], input[type="submit"]{
+                font-family: sans-serif;
+                background: #ede9e1;
+                width: 100%;
+                border: 0;
+                margin: 0 0 15px;
+                padding: 15px;
+                box-sizing: border-box;
+                font-size: 14px;        	   
+        	}
+        	.login-form input[type="submit"]:hover{
+        	   opacity: 0.8;
+        	}
+        	
+        	.image-container{
+        	   width: 50;
+        	   padding: 10px;
+        	}
+        	.image-container img{
+                display: block;
+                margin-left: auto;
+                margin-right: auto 
+        	}
+		</style>
 		<script>
 			function controllo_campi()
 			{
@@ -18,30 +64,19 @@
 	<body>
 		<?php
 			if(isset($_POST["lim"]))
-			{
 				$lim=$_POST["lim"];
-			}
 			else
-			{
 				$lim=10;
-			}
 			if(isset($_POST["cit"]))
-			{
 				$cit=$_POST["cit"];
-			}
 			else
-			{
 				$cit="bergamo";
-			}
 			if(isset($_POST["que"]))
-			{
 				$que=$_POST["que"];
-			}
 			else
-			{
 				$que="pizzeria";
-			}
-		
+			echo ("<div class=
+			echo
 			echo "<form id='forma' method='post' onsubmit='return controllo_campi();'><br/>";
 			echo "<table>";
 			echo "<tr>";
@@ -59,7 +94,6 @@
 		
 			# Questo script chiama un'API e la inserisce in una tabella 
 			# Indirizzo dell'API da richiedere
-	                //$indirizzo_pagina="https://api.foursquare.com/v2/venues/search?v=20161016&query=$que&limit=$lim&intent=checkin&client_id=YVMN1NGHAW4DWINOY2BHBVQTGR0RG01D4EVZ3Z3TPRN5EBE2&W&client_secret=GYRAVQCTVV5DUYI3J3OH2GKLQN5S2LEA0QIGECJ1MUFBTX2X&near=$cit";
 		        $indirizzo_pagina="https://api.foursquare.com/v2/venues/search?v=20161016&query=$que&limit=$lim&intent=checkin&client_id=4DLLUZVXJEQIL0DFCN3B3YFG4EN4W4DMICUVPSNMRD24XKVU&W&client_secret=ZWWMV4LSNXGTZIRIUWHGE5PQDESQ0AHBACUPXVDPTESUTLRX&near=$cit";
 			# Codice di utilizzo di cURL
 			# Chiama l'API e la immagazzina in $json
@@ -79,24 +113,21 @@
 				for($i=0; $i<$lim; $i++)
 				{	
 					echo "<tr>";
-						echo "<td>";
-						echo $data->response->venues[$i]->name;
-						echo "</td>";
-						echo "<td>";
-						echo $data->response->venues[$i]->location->lat;
-						echo "</td>";
-						echo "<td>";
-						echo $data->response->venues[$i]->location->lng;
-						echo "</td>";
+					echo "<td>";
+					echo $data->response->venues[$i]->name;
+					echo "</td>";
+					echo "<td>";
+					echo $data->response->venues[$i]->location->lat;
+					echo "</td>";
+					echo "<td>";
+					echo $data->response->venues[$i]->location->lng;
+					echo "</td>";
 					echo "</tr>";
 				}
 			echo "</table>";
 			# Stampa di eventuali errori
 			echo curl_error($ch);
 			curl_close($ch);
-			
-			
 		?>
 	</body>
 </html>
-Credit to Gabriele Barcella
