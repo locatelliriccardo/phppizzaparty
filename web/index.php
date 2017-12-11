@@ -22,6 +22,9 @@
 			echo "<div class='login-div'>";
 			 echo"<div class='login-form'>";
 			  echo "<form id='forma' method='post' onsubmit='return controllo();'>";
+			  echo "<div class='image-container'>";
+			   echo "<img src='image/pizza.png'>";
+			  echo "</div>";
 			  echo "<div class='select'>";
 			   echo "<select id='massimo name='massimo'>";
 			    echo "<option selected disabled>Scegli il numero massimo</option>";
