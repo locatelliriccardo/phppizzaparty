@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Ricerca</title>
+		<title>cose</title>
+		<link rel="shortcut icon" type="image/x-icon" href="l.png" />
 		<style type="text/css">
             body {
                 background: #6b6b47;
