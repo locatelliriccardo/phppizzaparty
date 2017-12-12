@@ -10,7 +10,7 @@
 			if(isset($_POST["massimo"]))
 				$limite=$_POST["massimo"];
 			else
-				$limite=15;
+				$limite=10;
 			if(isset($_POST["citta"]))
 				$citta=$_POST["citta"];
 			else
@@ -26,8 +26,8 @@
 			   echo "<img src='images/pizza.png'>";
 			  echo "</div>";
 			  echo "<div class='select'>";
-			   echo "<select id='massimo name='massimo'>";
-			    echo "<option selected disabled>Scegli il numero massimo</option>";
+			   echo "<select id='massimo' name='massimo'>";
+			    //echo "<option selected disabled>Scegli il numero massimo</option>";
 			    for($massimo=1;$massimo<51;$massimo++)
 			     echo"<option value=$massimo>$massimo</option>";
 			   echo"</select>";
