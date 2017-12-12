@@ -27,7 +27,7 @@
 			  echo "</div>";
 			  echo "<div class='select'>";
 			   echo "<select id='massimo' name='massimo'>";
-			    //echo "<option selected disabled>Scegli il numero massimo</option>";
+			    echo "<option selected disabled>Scegli il numero massimo</option>";
 			    for($massimo=1;$massimo<51;$massimo++)
 			     echo"<option value=$massimo>$massimo</option>";
 			   echo"</select>";
