@@ -32,7 +32,7 @@
 			     echo"<option value=$massimo>$massimo</option>";
 			   echo"</select>";
 			  echo "<div class='select_arrow'>";
-			  echo "</div>";
+			  echo "</div>"; 
 			  echo "</div>";
 			  echo " Città<br/><input type='text' value='$citta' name='citta' id='citta' /><br/>";
 			  echo " Tipologia del locale<br/><input type='text' value='$query' name='query' id='query' /><br/>";
